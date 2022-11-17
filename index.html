@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Wars</title>
+
+    <link rel="stylesheet" href="main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="App">
+        <header class="App-header">
+          <h1>Pixel Wars</h1>
+          <h5 id='timer'></h5>
+        </header>
+      </div>
+
+    <div id='pixel_container_master'>
+        <div id='pixel_container'>
+            <div id = pxl1 class='pixel' onClick='pixelHighlight(id)' ></div>
+            <div id = pxl2 class='pixel' onClick='pixelHighlight(id)' ></div>
+            <div id = pxl3 class='pixel' onClick='pixelHighlight(id)' ></div>
+            <div id = pxl4 class='pixel' onClick='pixelHighlight(id)' ></div>
+            <div id = pxl5 class='pixel' onClick='pixelHighlight(id)' ></div>
+        </div>
+
+        <div id='pixel_container'>
+            <div id = pxl6 class='pixel' onClick='pixelHighlight(id)' ></div>
+            <div id = pxl7 class='pixel' onClick='pixelHighlight(id)' ></div>
+            <div id = pxl8 class='pixel' onClick='pixelHighlight(id)' ></div>
+            <div id = pxl9 class='pixel' onClick='pixelHighlight(id)' ></div>
+            <div id = pxl10 class='pixel' onClick='pixelHighlight(id)' ></div>
+        </div>
+
+        <div id='pixel_container'>
+            <div id = pxl11 class='pixel' onClick='pixelHighlight(id)' ></div>
+            <div id = pxl12 class='pixel' onClick='pixelHighlight(id)' ></div>
+            <div id = pxl13 class='pixel' onClick='pixelHighlight(id)' ></div>
+            <div id = pxl14 class='pixel' onClick='pixelHighlight(id)' ></div>
+            <div id = pxl15 class='pixel' onClick='pixelHighlight(id)' ></div>
+        </div>
+
+        <div id='pixel_container'>
+            <div id = pxl16 class='pixel' onClick='pixelHighlight(id)' ></div>
+            <div id = pxl17 class='pixel' onClick='pixelHighlight(id)' ></div>
+            <div id = pxl18 class='pixel' onClick='pixelHighlight(id)' ></div>
+            <div id = pxl19 class='pixel' onClick='pixelHighlight(id)' ></div>
+            <div id = pxl20 class='pixel' onClick='pixelHighlight(id)' ></div>
+        </div>
+
+        <div id='pixel_container'>
+            <div id = px21 class='pixel' onClick='pixelHighlight(id)' ></div>
+            <div id = px22 class='pixel' onClick='pixelHighlight(id)' ></div>
+            <div id = px23 class='pixel' onClick='pixelHighlight(id)' ></div>
+            <div id = px24 class='pixel' onClick='pixelHighlight(id)' ></div>
+            <div id = pxl25 class='pixel' onClick='pixelHighlight(id)' ></div>
+        </div>
+    </div>
+  
+    <div id='pxl1_pallete' class='pallete'>
+        <div class='pallete_flex'>
+            <span id='red' class='pallete_color' onClick='assignColor(id)'></span>
+            <span id='blue' class='pallete_color' onClick='assignColor(id)'></span>
+            <span id='green' class='pallete_color' onClick='assignColor(id)'></span>
+            <span id='yellow' class='pallete_color' onClick='assignColor(id)'></span>
+            <span id='white' class='pallete_color' onClick='assignColor(id)'></span>
+        </div>
+    </div>
+    
+
+    <script src='index.js'></script>
+    
+</body>
+</html>
