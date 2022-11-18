@@ -1,33 +1,42 @@
 // TO DO
-// Darken border of box on click and store pixel id in variable
-// Show pallete on click
 // Add Timer/Alert for after color is assigned
-
-// Detach Pallete and make it pop up from bottom of screen
-
+// Zoom on click
+// Mousewheel Zoom
+// Mousemove scroll left/right
 
 // COLOR PALLETE AND ASSIGNMENT
-
 let colors = {
     white: '#FFFFFF',
+    black: '#000000',
     red: '#FF0000',
-    blue: '#0000FF',
+    orange: '#FF7F00',
+    yellow: '#FFFF00',
     green: '#00FF00',
-    yellow: '#FFFF00'
+    blue: '#0000FF',
+    purple: '#9400D3',
+    brown: '#964B00'
 };
 
 // Is this first Variable better or worse in terms of clean code?
-const redSwatch = document.getElementById('red').style.backgroundColor = colors.red
+const redSwatch = document.getElementById('red')
 const blueSwatch = document.getElementById('blue')
 const greenSwatch = document.getElementById('green')
 const yellowSwatch = document.getElementById('yellow')
 const whiteSwatch = document.getElementById('white')
+const blackSwatch = document.getElementById('black')
+const orangeSwatch = document.getElementById('orange')
+const purpleSwatch = document.getElementById('purple')
+const brownSwatch = document.getElementById('brown')
 
-/* redSwatch.style.backgroundColor = colors.red */
+redSwatch.style.backgroundColor = colors.red
 blueSwatch.style.backgroundColor = colors.blue
 greenSwatch.style.backgroundColor = colors.green
 yellowSwatch.style.backgroundColor = colors.yellow
 whiteSwatch.style.backgroundColor = colors.white
+blackSwatch.style.backgroundColor = colors.black
+orangeSwatch.style.backgroundColor = colors.orange
+purpleSwatch.style.backgroundColor = colors.purple
+brownSwatch.style.backgroundColor = colors.brown
 
 const pixel = document.querySelector('.pixel')
 const pallete = document.getElementById('pxl1_pallete')
@@ -54,20 +63,33 @@ function pixelHighlight(id) {
 
 
 function assignColor(id) {
+    // Gets id of selected pixel
     currentPixel.style.backgroundColor = id
-    // Hides Color Pallete
-
+    
+    // resets pixel border and hides Color Pallete
     currentPixel.style.border = '0px solid gray'
     pallete.classList.remove('pallete_in')
 
-
-    // TIMER FUNCTION STARTS ON COLOR ASSIGNMENT
-    const timerBox = document.getElementById('timer')
-    let initTime = 30;
- 
-    timerBox.innerHTML = initTime + ' Seconds before next turn';
 }
 
+
+// Need another function that houses assignColor and calls it if the timer is at zero
+
+// TIMER FUNCTION STARTS ON COLOR ASSIGNMENT
+/*     let timeLeft = 10;
+    var elem = document.getElementById('timer');
+    var timerId = setInterval(countdown, 1000);
+
+    function countdown() {
+        if (timeLeft == 0) {
+            clearTimeout(timerId);
+            elem.innerHTML = 'Turn available!';
+            timeLeft = 0;
+        } else {
+            elem.innerHTML = timeLeft + ' seconds remaining';
+            timeLeft--;
+        }
+    }  */
 
 
 

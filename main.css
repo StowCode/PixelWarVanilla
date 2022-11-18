@@ -35,19 +35,30 @@ h1 {
   
 /* Main */  
 
+#timer {
+  display: block;
+  text-align:center;
+  font-size: 14px;
+  color: white;
+}
+
 #pixel_container_master {
   width: 100%;
   position: absolute;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin-top: 50px;
+  margin-top:25px;
 }
 
 .pixel {
-    height: 40px;
-    width: 40px;
+    height: 50px;
+    width: 50px;
     background-color: white;
+}
+
+.pixel:hover {
+  filter:brightness(.8)
 }
 
 .pallete {
@@ -58,8 +69,8 @@ h1 {
   left: 0;
   right: 0;
   margin: 15px auto;
-  width: 225px;
-  height: 50px;
+  width: 400px;
+  height: 60px;
   border-radius: 5px;
   align-items: center;
 }
@@ -104,15 +115,15 @@ h1 {
     z-index: 1;
     width: 100%;
     display: flex;
-    margin: 0px 20px;
+    margin: 0px 5px;
     align-items: center;
     justify-content: space-between;
 }
 
 .pallete_color {
     display: block;
-    height: 35px;
-    width: 35px;
+    height: 40px;
+    width: 40px;
     border-radius: 20%;
     box-shadow: 0px 0px 5px gray;
 }
