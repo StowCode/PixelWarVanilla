@@ -1,5 +1,4 @@
 // TO DO
-// Add Timer/Alert for after color is assigned
 // Zoom on click
 // Mousewheel Zoom
 // Mousemove scroll left/right
@@ -17,7 +16,6 @@ let colors = {
     brown: '#964B00'
 };
 
-// Is this first Variable better or worse in terms of clean code?
 const redSwatch = document.getElementById('red')
 const blueSwatch = document.getElementById('blue')
 const greenSwatch = document.getElementById('green')
@@ -62,48 +60,41 @@ function pixelHighlight(id) {
 }
 
 
+// Color Assignment and Timer
+let turnAvailable = true; // Determines whether assignColor can run
+let timeLeft = 10; // variable for timer function and alert
+
 function assignColor(id) {
-    // Gets id of selected pixel
-    currentPixel.style.backgroundColor = id
+
+    if (turnAvailable === true) { // checks for value of turnAvailable
+        console.log('turn available')
+        turnAvailable = false; // changes value and restricts turns until timer expires
     
-    // resets pixel border and hides Color Pallete
-    currentPixel.style.border = '0px solid gray'
-    pallete.classList.remove('pallete_in')
+        // Gets id of selected pixel
+        currentPixel.style.backgroundColor = id
+        
+        // resets pixel border and hides Color Pallete
+        currentPixel.style.border = '0px solid gray'
+        pallete.classList.remove('pallete_in')
 
+        // TIMER
+        var elem = document.getElementById('timer');
+        var timerId = setInterval(countdown, 1000);
+
+        function countdown() {
+            if (timeLeft == 0) {
+                clearTimeout(timerId);
+                elem.innerHTML = 'Turn available!';
+                timeLeft = 10;
+                turnAvailable = true; // Resets variable and allows another turn
+            } else {
+                elem.innerHTML = timeLeft + ' seconds until next turn!';
+                timeLeft--;
+            }
+        } countdown()
+
+    } else {
+        pallete.classList.remove('pallete_in')
+        alert(`Turn available in ${timeLeft} seconds`)
+    }
 }
-
-
-// Need another function that houses assignColor and calls it if the timer is at zero
-
-// TIMER FUNCTION STARTS ON COLOR ASSIGNMENT
-/*     let timeLeft = 10;
-    var elem = document.getElementById('timer');
-    var timerId = setInterval(countdown, 1000);
-
-    function countdown() {
-        if (timeLeft == 0) {
-            clearTimeout(timerId);
-            elem.innerHTML = 'Turn available!';
-            timeLeft = 0;
-        } else {
-            elem.innerHTML = timeLeft + ' seconds remaining';
-            timeLeft--;
-        }
-    }  */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
