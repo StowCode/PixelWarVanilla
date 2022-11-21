@@ -16,25 +16,17 @@ let colors = {
     brown: '#964B00'
 };
 
-const redSwatch = document.getElementById('red')
-const blueSwatch = document.getElementById('blue')
-const greenSwatch = document.getElementById('green')
-const yellowSwatch = document.getElementById('yellow')
-const whiteSwatch = document.getElementById('white')
-const blackSwatch = document.getElementById('black')
-const orangeSwatch = document.getElementById('orange')
-const purpleSwatch = document.getElementById('purple')
-const brownSwatch = document.getElementById('brown')
+// Not sure if this is an acceptable way to do this.  Was trying to cut down on lines of code.
+const redSwatch = document.getElementById('red').style.backgroundColor = colors.red
+const blueSwatch = document.getElementById('blue').style.backgroundColor = colors.blue
+const greenSwatch = document.getElementById('green').style.backgroundColor = colors.green
+const yellowSwatch = document.getElementById('yellow').style.backgroundColor = colors.yellow
+const whiteSwatch = document.getElementById('white').style.backgroundColor = colors.white
+const blackSwatch = document.getElementById('black').style.backgroundColor = colors.black
+const orangeSwatch = document.getElementById('orange').style.backgroundColor = colors.orange
+const purpleSwatch = document.getElementById('purple').style.backgroundColor = colors.purple
+const brownSwatch = document.getElementById('brown').style.backgroundColor = colors.brown
 
-redSwatch.style.backgroundColor = colors.red
-blueSwatch.style.backgroundColor = colors.blue
-greenSwatch.style.backgroundColor = colors.green
-yellowSwatch.style.backgroundColor = colors.yellow
-whiteSwatch.style.backgroundColor = colors.white
-blackSwatch.style.backgroundColor = colors.black
-orangeSwatch.style.backgroundColor = colors.orange
-purpleSwatch.style.backgroundColor = colors.purple
-brownSwatch.style.backgroundColor = colors.brown
 
 const pixel = document.querySelector('.pixel')
 const pallete = document.getElementById('pxl1_pallete')
@@ -62,7 +54,7 @@ function pixelHighlight(id) {
 
 // Color Assignment and Timer
 let turnAvailable = true; // Determines whether assignColor can run
-let timeLeft = 10; // variable for timer function and alert
+let timeLeft = 5; // variable for timer function and alert
 
 function assignColor(id) {
 
