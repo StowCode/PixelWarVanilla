@@ -4,7 +4,7 @@
 // Mousemove scroll left/right
 
 // COLOR PALLETE AND ASSIGNMENT
-let colors = {
+const SUPPORTED_COLORS = {
     white: '#FFFFFF',
     black: '#000000',
     red: '#FF0000',
@@ -16,17 +16,13 @@ let colors = {
     brown: '#964B00'
 };
 
-// Not sure if this is an acceptable way to do this.  Was trying to cut down on lines of code.
-const redSwatch = document.getElementById('red').style.backgroundColor = colors.red
-const blueSwatch = document.getElementById('blue').style.backgroundColor = colors.blue
-const greenSwatch = document.getElementById('green').style.backgroundColor = colors.green
-const yellowSwatch = document.getElementById('yellow').style.backgroundColor = colors.yellow
-const whiteSwatch = document.getElementById('white').style.backgroundColor = colors.white
-const blackSwatch = document.getElementById('black').style.backgroundColor = colors.black
-const orangeSwatch = document.getElementById('orange').style.backgroundColor = colors.orange
-const purpleSwatch = document.getElementById('purple').style.backgroundColor = colors.purple
-const brownSwatch = document.getElementById('brown').style.backgroundColor = colors.brown
+const swatches = {}
 
+for (const [color, hex] of Object.entries(SUPPORTED_COLORS)) {
+    console.log(color, hex)
+    swatches[color] = document.getElementById(color)
+    swatches[color].style.backgroundColor = hex   
+}
 
 const pixel = document.querySelector('.pixel')
 const pallete = document.getElementById('pxl1_pallete')
@@ -40,11 +36,10 @@ function pixelHighlight(id) {
 
     // Creates List of Pixels
     let previousPixels = document.querySelectorAll('.pixel')
-    function resetBorders() {
-        for (var x = 0; x < previousPixels.length; x++) {
-            previousPixels[x].style.border = '0px solid gray' 
-        }
-    } resetBorders()
+    
+    for (var x = 0; x < previousPixels.length; x++) {
+        previousPixels[x].style.border = '0px solid gray' 
+    }
 
     // Sets captured pixel to global variable
     currentPixel = document.getElementById(id)
