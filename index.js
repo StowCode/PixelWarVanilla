@@ -18,11 +18,14 @@ const SUPPORTED_COLORS = {
 
 const swatches = {}
 
-for (const [color, hex] of Object.entries(SUPPORTED_COLORS)) {
-    console.log(color, hex)
-    swatches[color] = document.getElementById(color)
-    swatches[color].style.backgroundColor = hex   
+function initializeSwatches() {
+    for (const [color, hex] of Object.entries(SUPPORTED_COLORS)) {
+        console.log(color, hex)
+        swatches[color] = document.getElementById(color)
+        swatches[color].style.backgroundColor = hex   
+    }    
 }
+
 
 const pixel = document.querySelector('.pixel')
 const pallete = document.getElementById('pxl1_pallete')
@@ -85,3 +88,25 @@ function assignColor(id) {
         alert(`Turn available in ${timeLeft} seconds`)
     }
 }
+
+
+// Render stuff
+function render() {
+    const div = document.getElementById("pxl1_pallete");
+    const pallete_flex = document.createElement("div");
+    div.appendChild(pallete_flex)
+    pallete_flex.className = "pallete_flex"
+
+    for (const [color, _] of Object.entries(SUPPORTED_COLORS)) {
+        const span = document.createElement("span");
+        span.id = color
+        span.className = "pallete_color"
+        span.addEventListener("click", function() { assignColor(color)})
+        pallete_flex.appendChild(span);
+        console.log(span)
+    }
+    initializeSwatches()
+}   
+
+render()
+
