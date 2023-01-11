@@ -16,6 +16,8 @@ const SUPPORTED_COLORS = {
     brown: '#964B00'
 };
 
+// Test comment
+
 const swatches = {}
 
 for (const [color, hex] of Object.entries(SUPPORTED_COLORS)) {
